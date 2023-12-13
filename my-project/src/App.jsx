@@ -1,7 +1,9 @@
 import {Sidebar} from "./Sidebar"
 import Logo from "./Img/Frame.png"
 import SearchBar from "./Searchbar"
-
+import {RolesList} from "./RolesList"
+import "./index.css"
+import {Settings} from "./Settings"
 const Alert = () => (<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
   <path d="M16.0941 13.6185L15.168 12.6923V9.10256C15.168 6.89846 13.9905 5.05333 11.9372 4.56513V4.07692C11.9372 3.48103 11.4562 3 10.8603 3C10.2644 3 9.78335 3.48103 9.78335 4.07692V4.56513C7.72284 5.05333 6.55258 6.89128 6.55258 9.10256V12.6923L5.62643 13.6185C5.17412 14.0708 5.49002 14.8462 6.12899 14.8462H15.5844C16.2305 14.8462 16.5464 14.0708 16.0941 13.6185ZM13.7321 13.4103H7.98848V9.10256C7.98848 7.32205 9.07258 5.87179 10.8603 5.87179C12.648 5.87179 13.7321 7.32205 13.7321 9.10256V13.4103ZM10.8603 17C11.65 17 12.2962 16.3538 12.2962 15.5641H9.42438C9.42438 16.3538 10.0634 17 10.8603 17Z" fill="#474747"/>
 </svg>)
@@ -14,19 +16,27 @@ const Drop = () => (
 
 export function App() {
   return (
-    <div>
+    <div >
+<div>
 <header className="flex pt-4 bg-[#F4F5F9]" >
   <img src={Logo} className="mb-2 ml-2"/>
   <h1 className="ml-[25px]">როლები</h1>
    <SearchBar/>
    <div className="flex pl-[400px]">
    <Alert/>
+   </div>
    <div className="mt-2 ml-2">
-   <Drop />
+   <Drop />  
    </div>
-   </div>
-</header>
+   </header>
+
    <Sidebar/>
+   </div>
+   <div className="ml-20 mt-[-720px]">
+<RolesList/>
+ </div>
+
+ <Settings/>
 </div>
   )
 }
