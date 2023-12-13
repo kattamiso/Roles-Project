@@ -9,7 +9,7 @@ const SearchIcon = () => (
 export function Searchbar() {
 
     return (
-    <div className="ml-[500px] w-[300px] mt-[-3px]"> 
+    <div className="ml-[500px] w-[300px] mt-"> 
       <input
         className="w-[300px] pl-5 border rounded-xl focus:outline-none focus:border-blue-300"
         type="text"

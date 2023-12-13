@@ -66,16 +66,34 @@ const HelpCenter = () => (
 
 export function Sidebar() {
 return (
-<div className="flex flex-col">
- <DashboardIcon/>
+<div className="flex flex-col  pt-[20px]  bg-[#F4F5F9] w-[60px] h-screen ">
+  <div className="hover:bg-blue-200 h-[50px] w-[60px] p-[15px] cursor-pointer">
+ <DashboardIcon />
+ </div>
+ <div className="hover:bg-blue-200 h-[50px] w-[60px] p-[15px] cursor-pointer">
  <Bookmark/>
+ </div>
+ <div className="hover:bg-blue-200 h-[50px] w-[60px] p-[15px] cursor-pointer">
  <Group/>
+ </div>
+ <div className="hover:bg-blue-200 h-[50px] w-[60px] p-[15px] cursor-pointer">
  <FramePerson/>
+ </div>
+ <div className="hover:bg-blue-200 h-[50px] w-[60px] p-[15px] cursor-pointer">
  <Person/>
+ </div>
+ <div className="hover:bg-blue-200 h-[50px] w-[60px] p-[15px] cursor-pointer">
  <Work/>
+ </div>
+ <div className="hover:bg-blue-200 h-[50px] w-[60px] p-[15px] cursor-pointer">
  <AccountTree/>
+ </div>
+ <div className="hover:bg-blue-200 h-[50px] w-[60px] p-[15px] cursor-pointer">
  <Folder/>
+ </div>
+ <div className="hover:bg-blue-200 h-[50px] w-[60px] p-[15px] cursor-pointer">
  <HelpCenter/>
+ </div>
 </div>
 )
 }

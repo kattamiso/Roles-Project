@@ -16,12 +16,14 @@ export function App() {
   return (
     <div>
 <header className="flex pt-4 bg-[#F4F5F9]" >
-  <img src={Logo}/>
-  <h1>როლები</h1>
+  <img src={Logo} className="mb-2 ml-2"/>
+  <h1 className="ml-[25px]">როლები</h1>
    <SearchBar/>
    <div className="flex pl-[400px]">
    <Alert/>
-   <Drop className = "mt-2"/>
+   <div className="mt-2 ml-2">
+   <Drop />
+   </div>
    </div>
 </header>
    <Sidebar/>
