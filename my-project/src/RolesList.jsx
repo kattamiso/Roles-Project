@@ -17,12 +17,11 @@ const Archive = () => (
 </svg>
 )
 
-export function RolesList() {
+export function RolesList() { 
+
   return (
     <div>
-    <button  className="text-[#2F74FF] bg-blue rounded-2xl text-bold border-gray-100 border-8 bg-[#EEF4FF] shadow-xs">
-         დამატება 
-        </button>
+         
         <div className="flex gap-5 mt-10">
          <h2 className="w-[250px] text-[#A1A1A1]">სახელი</h2>
          <h2 className="text-[#A1A1A1]">აღწერა</h2>
@@ -53,7 +52,7 @@ export function RolesList() {
             </div>
          </div>
 
-<div className="w-full border-t border-gray-200 my-4"></div>
+         <div className="w-full border-t border-gray-200 my-4"></div>
 
          <div className="flex gap-[120px] mt-8">
             <h2>ადმინისტრატორი</h2>
@@ -69,6 +68,10 @@ export function RolesList() {
 
     </div>
   )
+
 }
 
-export default RolesList
+
+
+
+export default RolesList;
