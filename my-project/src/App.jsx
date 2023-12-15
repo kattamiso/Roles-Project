@@ -35,7 +35,7 @@ export function AppContent() {
         <div className="flex">
         <Sidebar />
         <div className="m-4"> 
-        < Link to="/my-project/src/Settings.jsx" className="text-[#2F74FF] bg-blue rounded-2xl text-bold border-gray-100 border-8 bg-[#EEF4FF] shadow-xs">
+        < Link to="/Settings" className="text-[#2F74FF] bg-blue rounded-2xl text-bold border-gray-100 border-8 bg-[#EEF4FF] shadow-xs">
          დამატება 
        </Link>
           <RolesList />
@@ -52,8 +52,7 @@ export function AppContent() {
       <div>
         <Router>
           <nav>
-            <Link to="/roles">Roles</Link>
-            <Link to="/settings">Settings</Link>
+  
           </nav>
           <Routes>
             <Route path="/" element={<AppContent />} />
