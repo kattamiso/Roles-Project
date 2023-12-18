@@ -1,13 +1,9 @@
 import React, { useState } from 'react'
-
-const DropUp = () =>(
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
-  <path d="M13 7.5L7 1.5L1 7.5" stroke="#261C15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>)
+import { Link } from 'react-router-dom'
 
 const DropDown = () =>(
-  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
-  <path d="M13 7.5L7 1.5L1 7.5" stroke="#261C15" />
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+  <path d="M1 1L7 7L13 1" stroke="#261C15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>)
 
 
@@ -17,33 +13,27 @@ const X =() => (
 </svg>
 )
 
-const Accordion = () => {
+  const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-  const [checkedOptions, setCheckedOptions] = useState([]);
+
+  const hanldeClick = () => {
+    console.log('Hello Mari')
+  }
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-
-
-  const handleOptionClick = (option) => {
-    const updatedOptions = checkedOptions.includes(option)
-      ? checkedOptions.filter((item) => item !== option)
-      : [...checkedOptions, option];
-    setCheckedOptions(updatedOptions);
-  };
   const sections = [
     {
       title: 'ჩანართები',
       options: [
         'ჩანართის შექმნა',
        'ჩანართის რედაქტირება',
-        'ჩანართის წაშლა'],
+      ],
         optionInfo: [
         'მომხმარებელს შეუძლია შექმნას ჩანართები',
         'მომხმარებელს შეუძლია შექმნილი ჩანართების რედაქტირება',
-        'მომხმარებელს შეუძლია შექმნილი წაშლა',
         ],
     },
     {
@@ -55,7 +45,6 @@ const Accordion = () => {
         optionInfo: [
         'მომხმარებელს შეუძლია შექმნას ჩანართები',
         'მომხმარებელს შეუძლია შექმნილი ჩანართების რედაქტირება',
-        'მომხმარებელს შეუძლია შექმნილი წაშლა',
         ],
     },
     {
@@ -67,7 +56,6 @@ const Accordion = () => {
         optionInfo: [
         'მომხმარებელს შეუძლია შექმნას ჩანართები',
         'მომხმარებელს შეუძლია შექმნილი ჩანართების რედაქტირება',
-        'მომხმარებელს შეუძლია შექმნილი წაშლა',
         ],
     },
     {
@@ -84,27 +72,37 @@ const Accordion = () => {
     },
   ];
 
+
   return (
-    <div className="mt-20">
+    <div className="mt-5  flex flex-col gap-8 w-[1200px] rounded-3xl">
       {sections.map((section, index) => (
-        <div className="border-b pb-2" key={index}>
-          <div
-            className="font-bold cursor-pointer"
-            onClick={() => toggleAccordion(index)}
+        <div className="pb-2 flex-col flex  " key={index}>
+          <div className='flex justify-between items-center p-2 bg-slate-200 rounded-t-[12px]'
+          
+          onClick={() => toggleAccordion(index)}       
           >
+
+        <div
+            className="font-bold cursor-pointer "
+            >
             {section.title}
           </div>
+          <div className={`${activeIndex === index && "rotate-180"} transition-all transform duration-500 ease-in-out `} onClick={hanldeClick('')}>
+          <DropDown/>  
+          </div>
+            </div>
           {activeIndex === index && (
-            <div className="flex flex-col mt-2">
+            <div className="flex flex-col rounded-b-[12px] border-grey w-full bg-slate-200 p-2 ">
               {section.options.map((option, optionIndex) => (
-                <div className="flex flex-col mb-2" key={optionIndex}>
+                <div className="flex justify-between items-center  p-3 hover:bg-[#EEF4FF]  rounded-2xl cursor-pointer" key={optionIndex}>
+                  <div>
+
                   <label className="cursor-pointer flex items-center">
                     <p>{option}</p>
                   </label>
-                  <p className="text-xs ">{section.optionInfo[optionIndex]}</p> 
-                   <input type="checkbox" 
-                      onChange={() => handleOptionClick(option)} value={option} className="form-checkbox " />
-
+                  <p className="text-xs">{section.optionInfo[optionIndex]}</p> 
+                  </div>
+                  <input type="checkbox"  value={option}  />
                 </div>
               ))}
             </div>
@@ -114,16 +112,15 @@ const Accordion = () => {
     </div>
   );
 };
-
-
 export function Settings() {
-    
+     
   return (
     <div>
       <div className="flex p-8 gap-9 text-bold">
-        <button>
+
+      <Link to="/">
         <X/>
-        </button>
+      </Link>
 
         <h1>როლის დამატება</h1>
         </div>
@@ -158,9 +155,6 @@ export function Settings() {
          <Accordion/>
       </div>
  
-
-
-
     </div>
   )
 }
