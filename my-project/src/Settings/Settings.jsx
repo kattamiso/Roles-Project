@@ -1,17 +1,7 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { Link } from 'react-router-dom'
-
-const DropDown = () =>(
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
-  <path d="M1 1L7 7L13 1" stroke="#261C15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>)
-
-
-const X =() => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
-  <path d="M11.7338 0.775313C11.3788 0.420364 10.8055 0.420364 10.4505 0.775313L6 5.21672L1.54949 0.766212C1.19454 0.411263 0.62116 0.411263 0.266212 0.766212C-0.0887372 1.12116 -0.0887372 1.69454 0.266212 2.04949L4.71672 6.5L0.266212 10.9505C-0.0887372 11.3055 -0.0887372 11.8788 0.266212 12.2338C0.62116 12.5887 1.19454 12.5887 1.54949 12.2338L6 7.78328L10.4505 12.2338C10.8055 12.5887 11.3788 12.5887 11.7338 12.2338C12.0887 11.8788 12.0887 11.3055 11.7338 10.9505L7.28328 6.5L11.7338 2.04949C12.0796 1.70364 12.0796 1.12116 11.7338 0.775313Z" fill="#323232"/>
-</svg>
-)
+import DropDownIcon from '../../Icons/DropDownIcon'
+import CloseIcon from '../../Icons/CloseIcon'
 
   const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -87,8 +77,8 @@ const X =() => (
             >
             {section.title}
           </div>
-          <div className={`${activeIndex === index && "rotate-180"} transition-all transform duration-500 ease-in-out `} onClick={hanldeClick('')}>
-          <DropDown/>  
+          <div className={`${activeIndex === index && "rotate-180"} transition-all transform duration-600 ease-in-out `} onClick={hanldeClick('')}>
+          <DropDownIcon/>  
           </div>
             </div>
           {activeIndex === index && (
@@ -119,7 +109,7 @@ export function Settings() {
       <div className="flex p-8 gap-9 text-bold">
 
       <Link to="/">
-        <X/>
+        <CloseIcon/>
       </Link>
 
         <h1>როლის დამატება</h1>
