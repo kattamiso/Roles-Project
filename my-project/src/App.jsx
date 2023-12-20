@@ -1,16 +1,14 @@
 import Sidebar from './Sidebar';
 import Logo from './Img/Frame.png';
 import SearchBar from './Searchbar';
-import  {RolesList}  from './Header/RolesList';
+import  {RolesList}  from './List/RolesList';
 import './index.css';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
-import {Settings} from "./Settings/Settings"
 import Alert from '../Icons/AlertIcon'
 import DropDownIcon from '../Icons/DropDownIcon';
+import Settings from './Settings/Settings'
 
 export function AppContent() {
-// const[open,setOpen]=useState(false)
-// {open&&{<div>x onClick={()=>{setOpen(false)}}</div>)}
 
   return (
       <div>
@@ -29,7 +27,7 @@ export function AppContent() {
         <div className="flex">
         <Sidebar />
         <div className="m-4"> 
-        < Link to="/Settings" className="text-[#2F74FF] bg-blue rounded-2xl text-bold border-gray-100 border-8 bg-[#EEF4FF] shadow-xs">
+        <Link to="/Settings" className="text-[#2F74FF] bg-blue rounded-2xl text-bold border-gray-100 border-8 bg-[#EEF4FF] shadow-xs">
          დამატება 
        </Link>
           <RolesList />
@@ -46,13 +44,12 @@ export function AppContent() {
       <div>
         <Router>
           <nav>
-  
           </nav>
           <Routes>
             <Route path="/" element={<AppContent />} />
             <Route path="/roles" element={<RolesList />} />
             <Route path="/settings" element={<Settings />} />
-          </Routes>
+           </Routes>
         </Router>
       </div>
     );
