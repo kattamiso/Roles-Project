@@ -5,10 +5,6 @@ import DropDownIcon from '../../Icons/DropDownIcon'
 export function Accordion()  {
         const [activeIndex, setActiveIndex] = useState(null);
       
-        const hanldeClick = () => {
-          console.log('Hello Mari')
-        }
-      
         const toggleAccordion = (index) => {
           setActiveIndex(activeIndex === index ? null : index);
         };
@@ -76,7 +72,7 @@ export function Accordion()  {
                   >
                   {section.title}
                 </div>
-                <div className={`${activeIndex === index && "rotate-180"} transition-all transform duration-0 ease-in-out `} onClick={hanldeClick('')}>
+                <div className={`${activeIndex === index && "rotate-180"} transition-all transform duration-20 ease-in-out `}>
                 <DropDownIcon/>  
                 </div>
                   </div>
