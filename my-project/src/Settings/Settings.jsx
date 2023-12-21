@@ -15,7 +15,7 @@ export function Settings() {
 
          setIsPending(true)
 
-         fetch('http://localhost:5173/', {
+         fetch('http://localhost:3000/data', {
           method: 'POST',
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(data)
