@@ -7,6 +7,10 @@ const Role = () => {
   const [items, setItems] = useState(null);
 
   useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
     fetch(' http://localhost:4000/data')
       .then(res => res.json())
       .then(data => {
@@ -15,13 +19,23 @@ const Role = () => {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  };
 
 
   const handleDelete = (deleteItemId) => {
     const newItems = items.filter((item) => item.id !== deleteItemId);
-    setItems(newItems);
+    setItems(newItems);   
+      fetch(`http://localhost:4000/data/${deleteItemId}`, {
+      method: 'DELETE',
+    })
+    .then(() => {
+      console.log('Item deleted successfully');
+    })
+    .catch(error => {
+      console.error('Error deleting item:', error);
+    }); 
   };
+  
   return (
     <div>
       <div>
@@ -34,7 +48,7 @@ const Role = () => {
                 <HelpIcon />
                 <EditIcon />
                 <button onClick={() => handleDelete(item.id)}>
-                  <DeleteIcon />
+                <DeleteIcon />
                 </button>
               </div>
               <hr className="border-b border-gray-100" />
